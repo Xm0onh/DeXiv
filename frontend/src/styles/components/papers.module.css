@@ -1,0 +1,101 @@
+.container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+  font-family: monospace;
+  font-size: 1.875rem;
+  margin-bottom: 1.5rem;
+  color: #111827;
+}
+
+.papersList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.paper {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.paper:last-child {
+  border-bottom: none;
+}
+
+.paperTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #111827;
+}
+
+.paperTitle a:hover {
+  color: #3b82f6;
+}
+
+.authors {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+}
+
+.abstract {
+  font-size: 1rem;
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.metadata {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.category {
+  background-color: #dbeafe;
+  color: #1e40af;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .container {
+    background-color: #1f2937;
+  }
+
+  .title {
+    color: white;
+  }
+
+  .paperTitle {
+    color: white;
+  }
+
+  .paperTitle a:hover {
+    color: #60a5fa;
+  }
+
+  .authors {
+    color: #9ca3af;
+  }
+
+  .abstract {
+    color: #d1d5db;
+  }
+
+  .metadata {
+    color: #9ca3af;
+  }
+
+  .category {
+    background-color: #1e3a8a;
+    color: #93c5fd;
+  }
+} 

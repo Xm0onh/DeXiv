@@ -1,0 +1,28 @@
+.container {
+  min-height: 100vh;
+  background-color: #f3f4f6;
+}
+
+.main {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .container {
+    background-color: #111827;
+  }
+} 

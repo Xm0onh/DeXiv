@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import styles from './submit.module.css';
+import styles from '../../styles/pages/submit.module.css';
 
 export default function SubmitPaper() {
   const [formData, setFormData] = useState({

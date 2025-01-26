@@ -1,0 +1,41 @@
+.navbar {
+  background-color: #1f2937;
+  color: white;
+}
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  height: 4rem;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-family: monospace;
+  font-size: 1.25rem;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.link {
+  font-size: 0.875rem;
+  color: #d1d5db;
+}
+
+.link:hover {
+  color: white;
+} 
