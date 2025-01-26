@@ -20,11 +20,16 @@ export default {
         'spin-slow': 'spin 3s linear infinite',
         'spin-slower': 'spin 4s linear infinite',
         'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+        'fade-in': 'fade-in 0.5s ease-out',
       },
       keyframes: {
         'pulse-glow': {
           '0%, 100%': { opacity: '0.5' },
           '50%': { opacity: '1' },
+        },
+        'fade-in': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
         },
       },
     },

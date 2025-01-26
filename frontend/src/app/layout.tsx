@@ -4,6 +4,8 @@ import "./globals.css";
 import Footer from '@/components/layout/Footer';
 import HexagonGrid from '@/components/layout/HexagonGrid';
 import BlockchainSpinner from '@/components/ui/BlockchainSpinner';
+import NavIndicator from '@/components/layout/NavIndicator';
+import FloatingActionButton from '@/components/ui/FloatingActionButton';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +36,8 @@ export default function RootLayout({
         <div className="fixed top-4 right-4 z-[100]">
           <BlockchainSpinner />
         </div>
+        <NavIndicator />
+        <FloatingActionButton />
         {children}
         <Footer />
       </body>

@@ -1,10 +1,41 @@
 import BlockchainSpinner from './BlockchainSpinner';
 
-export default function LoadingState() {
+interface LoadingStateProps {
+  message?: string;
+  size?: 'sm' | 'md' | 'lg';
+  fullscreen?: boolean;
+}
+
+export default function LoadingState({ 
+  message = 'Loading...', 
+  size = 'md',
+  fullscreen = false 
+}: LoadingStateProps) {
+  const sizeClasses = {
+    sm: 'w-8 h-8',
+    md: 'w-12 h-12',
+    lg: 'w-16 h-16'
+  };
+
+  const Container = fullscreen ? 'div' : 'div';
+  const containerClasses = fullscreen 
+    ? 'fixed inset-0 bg-background/80 backdrop-blur-sm z-50'
+    : 'min-h-[200px]';
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-[200px] gap-4">
-      <BlockchainSpinner />
-      <p className="text-sm text-foreground/60">Loading...</p>
-    </div>
+    <Container className={`
+      ${containerClasses}
+      flex flex-col items-center justify-center gap-4
+      animate-fade-in
+    `}>
+      <div className={sizeClasses[size]}>
+        <BlockchainSpinner />
+      </div>
+      {message && (
+        <p className="text-sm text-foreground/60 animate-pulse">
+          {message}
+        </p>
+      )}
+    </Container>
   );
 } 
