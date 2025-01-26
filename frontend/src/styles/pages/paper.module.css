@@ -1,0 +1,364 @@
+.container {
+  min-height: 100vh;
+  background: var(--background);
+  padding-top: 5rem;
+}
+
+.main {
+  padding: 3rem 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.glowOrb {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, 
+    rgba(0, 220, 130, 0.1) 0%, 
+    rgba(14, 165, 233, 0.05) 50%, 
+    transparent 70%
+  );
+  top: -300px;
+  left: -200px;
+  filter: blur(50px);
+  animation: float 10s ease-in-out infinite;
+  z-index: 0;
+}
+
+.glowOrb2 {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, 
+    rgba(14, 165, 233, 0.1) 0%, 
+    rgba(99, 102, 241, 0.05) 50%, 
+    transparent 70%
+  );
+  bottom: -200px;
+  right: -100px;
+  filter: blur(50px);
+  animation: float 8s ease-in-out infinite reverse;
+  z-index: 0;
+}
+
+.breadcrumbs {
+  margin-bottom: 2rem;
+  color: var(--foreground);
+  opacity: 0.7;
+}
+
+.breadcrumbs a {
+  color: var(--foreground);
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.breadcrumbs a:hover {
+  opacity: 1;
+}
+
+.paper {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  position: relative;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(45deg, #00DC82, #0EA5E9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+.metadata {
+  margin-bottom: 1.5rem;
+}
+
+.authors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.author {
+  color: var(--foreground);
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.details {
+  display: flex;
+  gap: 1rem;
+  color: var(--foreground);
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+.category {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.2rem 0.6rem;
+  border-radius: 1rem;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--foreground);
+  opacity: 0.8;
+}
+
+.downloadButton {
+  margin-left: auto;
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(45deg, #00DC82, #0EA5E9);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.content {
+  color: var(--foreground);
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+}
+
+.abstract {
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.keyword {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.references {
+  list-style: none;
+  padding: 0;
+}
+
+.reference {
+  padding: 0.5rem 0;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+.actions {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.actionButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  color: var(--foreground);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.actionButton:hover {
+  background: rgba(14, 165, 233, 0.1);
+  border-color: #0EA5E9;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .stats {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .downloadButton {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .actionButtons {
+    flex-wrap: wrap;
+  }
+
+  .actionButton {
+    flex: 1;
+    min-width: calc(50% - 0.5rem);
+    justify-content: center;
+  }
+}
+
+.versions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.versionItem {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.versionItem:hover {
+  border-color: rgba(14, 165, 233, 0.2);
+  transform: translateX(4px);
+}
+
+.versionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.versionInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.versionTag {
+  background: linear-gradient(45deg, #00DC82, #0EA5E9);
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.versionDate {
+  color: var(--foreground);
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+.versionDownload {
+  padding: 0.3rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  color: var(--foreground);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.versionDownload:hover {
+  background: rgba(14, 165, 233, 0.1);
+  border-color: #0EA5E9;
+}
+
+.versionChanges {
+  color: var(--foreground);
+  opacity: 0.9;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.versionHash {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--foreground);
+  opacity: 0.7;
+  font-family: monospace;
+}
+
+.hashLabel {
+  opacity: 0.8;
+}
+
+.hash {
+  color: #0EA5E9;
+}
+
+@media (max-width: 768px) {
+  .versionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .versionDownload {
+    width: 100%;
+    text-align: center;
+  }
+
+  .versionHash {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+} 
