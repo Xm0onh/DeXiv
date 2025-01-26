@@ -1,0 +1,111 @@
+.container {
+  min-height: 100vh;
+  background-color: white;
+}
+
+.nav {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.navInner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.navContent {
+  display: flex;
+  height: 4rem;
+}
+
+.logo {
+  font-family: serif;
+  font-size: 1.25rem;
+}
+
+.main {
+  padding: 3rem 1rem;
+}
+
+.formContainer {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 2.5rem;
+}
+
+.title {
+  font-family: serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e5e7eb;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: #1f2937;
+  color: white;
+  margin-top: 1.5rem;
+}
+
+.submitButton:hover {
+  background-color: #111827;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  .container {
+    background-color: #111827;
+  }
+
+  .nav {
+    border-color: #374151;
+  }
+
+  .description {
+    color: #9ca3af;
+  }
+
+  .input {
+    background-color: #1f2937;
+    border-color: #374151;
+  }
+
+  .submitButton {
+    background-color: #374151;
+  }
+
+  .submitButton:hover {
+    background-color: #4b5563;
+  }
+} 
