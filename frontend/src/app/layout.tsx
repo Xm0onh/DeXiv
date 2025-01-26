@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from '@/components/layout/Footer';
+import HexagonGrid from '@/components/layout/HexagonGrid';
+import BlockchainSpinner from '@/components/ui/BlockchainSpinner';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,6 +30,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <HexagonGrid />
+        <div className="fixed top-4 right-4 z-[100]">
+          <BlockchainSpinner />
+        </div>
         {children}
         <Footer />
       </body>
