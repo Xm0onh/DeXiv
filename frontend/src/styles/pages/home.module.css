@@ -1,24 +1,291 @@
 .container {
   min-height: 100vh;
-  background-color: #f3f4f6;
+  background: linear-gradient(
+    to bottom,
+    var(--background),
+    rgba(var(--primary-rgb), 0.05)
+  );
 }
 
 .main {
-  max-width: 80rem;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 3rem 1rem;
+  padding: 2rem;
 }
 
-.grid {
+.hero {
+  text-align: center;
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.glowOrb {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, 
+    rgba(0, 220, 130, 0.1) 0%, 
+    rgba(14, 165, 233, 0.05) 50%, 
+    transparent 70%
+  );
+  top: -300px;
+  left: -200px;
+  filter: blur(50px);
+  animation: float 10s ease-in-out infinite;
+  z-index: 0;
+}
+
+.glowOrb2 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, 
+    rgba(14, 165, 233, 0.1) 0%, 
+    rgba(99, 102, 241, 0.05) 50%, 
+    transparent 70%
+  );
+  bottom: -200px;
+  right: -100px;
+  filter: blur(50px);
+  animation: float 8s ease-in-out infinite reverse;
+  z-index: 0;
+}
+
+.title {
+  position: relative;
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(45deg, 
+    #00DC82,  /* Vibrant mint green */
+    #36E4DA,  /* Bright cyan */
+    #0EA5E9   /* Electric blue */
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 5s linear infinite;
+  text-shadow: 0 0 30px rgba(14, 165, 233, 0.2);
+}
+
+.highlight {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(45deg, 
+    #00DC82,  /* Vibrant mint green */
+    #0EA5E9,  /* Electric blue */
+    #6366F1   /* Indigo */
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-out;
+}
+
+.title:hover .highlight::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--foreground);
+  opacity: 0.8;
+  margin-bottom: 2rem;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+
+.statItem {
+  text-align: center;
+}
+
+.statNumber {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: var(--foreground);
+  opacity: 0.7;
+}
+
+.features {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 4rem 0;
+}
+
+.feature {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(124, 58, 237, 0.03), transparent);
+  transform: translateX(-100%);
+  transition: 0.5s;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  border-color: rgba(124, 58, 237, 0.2);
+}
+
+.feature:hover::before {
+  transform: translateX(100%);
+}
+
+.featureIcon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.feature h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.feature p {
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+.latestPapers {
+  margin-top: 4rem;
+}
+
+.latestPapers h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.paperGrid {
+  display: grid;
   gap: 2rem;
 }
 
-.rightColumn {
+.heroActions {
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0 3rem;
+}
+
+.primaryButton {
+  padding: 0.75rem 2rem;
+  background: linear-gradient(45deg, #00DC82, #0EA5E9);
+  color: white;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.primaryButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.primaryButton:hover::before {
+  left: 100%;
+}
+
+.secondaryButton {
+  padding: 0.75rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  color: var(--foreground);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.secondaryButton:hover {
+  background: rgba(124, 58, 237, 0.1);
+  border-color: rgba(124, 58, 237, 0.5);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .stats {
+    gap: 2rem;
+  }
+  
+  .features {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
