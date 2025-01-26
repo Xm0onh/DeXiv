@@ -1,23 +1,165 @@
 .container {
   min-height: 100vh;
-  background: linear-gradient(
-    to bottom,
-    var(--background),
-    rgba(var(--primary-rgb), 0.05)
-  );
+  background: linear-gradient(to bottom, #000066, #000080);
+  padding-top: 5rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .main {
+  padding: 3rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  position: relative;
 }
 
 .hero {
   text-align: center;
-  padding: 6rem 0;
+  border: 2px solid rgba(0, 255, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
+  padding: 3rem;
+  margin: 2rem;
+  position: relative;
+  border-radius: 4px;
+}
+
+.hero::before {
+  content: "🚀 WEB3 RESEARCH 🚀";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #ff0000, #ff00ff);
+  color: #ffffff;
+  padding: 0.25rem 1.5rem;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  border-radius: 20px;
+  animation: glow 2s infinite;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.title {
+  font-family: "VT323", monospace;
+  font-size: 4rem;
+  background: linear-gradient(45deg, #00ff00, #00ffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 
+    3px 3px 0 rgba(255, 0, 255, 0.5),
+    6px 6px 0 rgba(0, 0, 0, 0.3);
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.highlight {
+  background: linear-gradient(45deg, #ff00ff, #ff0000);
+  padding: 0 0.5rem;
+  color: #ffffff;
+  border-radius: 4px;
+  text-shadow: none;
+  -webkit-text-fill-color: #ffffff;
+}
+
+.subtitle {
+  font-family: "Comic Sans MS", cursive;
+  color: #00ffff;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 3rem 2rem;
+}
+
+.feature {
+  border: 2px solid rgba(255, 0, 255, 0.3);
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border-radius: 4px;
   position: relative;
   overflow: hidden;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 0, 255, 0.8);
+  box-shadow: 0 5px 15px rgba(255, 0, 255, 0.2);
+}
+
+.feature::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.feature:hover::before {
+  left: 100%;
+}
+
+.featureIcon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2rem;
+}
+
+.statItem {
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  padding: 1.5rem;
+  text-align: center;
+  background: rgba(0, 0, 128, 0.5);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.statItem:hover {
+  border-color: rgba(0, 255, 255, 0.8);
+  transform: scale(1.05);
+}
+
+.statNumber {
+  font-family: "Press Start 2P", monospace;
+  font-size: 2rem;
+  color: #ffff00;
+  text-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  color: #ffffff;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+@keyframes glow {
+  0%, 100% { 
+    box-shadow: 0 0 5px rgba(255, 0, 255, 0.5);
+  }
+  50% { 
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
+  }
 }
 
 .glowOrb {
@@ -52,142 +194,6 @@
   filter: blur(50px);
   animation: float 8s ease-in-out infinite reverse;
   z-index: 0;
-}
-
-.title {
-  position: relative;
-  font-size: 4rem;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(45deg, 
-    #00DC82,  /* Vibrant mint green */
-    #36E4DA,  /* Bright cyan */
-    #0EA5E9   /* Electric blue */
-  );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 5s linear infinite;
-  text-shadow: 0 0 30px rgba(14, 165, 233, 0.2);
-}
-
-.highlight {
-  position: relative;
-  display: inline-block;
-  background: linear-gradient(45deg, 
-    #00DC82,  /* Vibrant mint green */
-    #0EA5E9,  /* Electric blue */
-    #6366F1   /* Indigo */
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.highlight::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: -4px;
-  left: 0;
-  background: linear-gradient(90deg, #60a5fa, #a78bfa);
-  transform-origin: right;
-  transform: scaleX(0);
-  transition: transform 0.5s ease-out;
-}
-
-.title:hover .highlight::after {
-  transform-origin: left;
-  transform: scaleX(1);
-}
-
-.subtitle {
-  font-size: 1.25rem;
-  color: var(--foreground);
-  opacity: 0.8;
-  margin-bottom: 2rem;
-}
-
-.stats {
-  display: flex;
-  justify-content: center;
-  gap: 4rem;
-  margin-top: 3rem;
-}
-
-.statItem {
-  text-align: center;
-}
-
-.statNumber {
-  display: block;
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #2563eb;
-}
-
-.statLabel {
-  font-size: 0.875rem;
-  color: var(--foreground);
-  opacity: 0.7;
-}
-
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin: 4rem 0;
-}
-
-.feature {
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 1rem;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.feature::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, transparent, rgba(124, 58, 237, 0.03), transparent);
-  transform: translateX(-100%);
-  transition: 0.5s;
-}
-
-.feature:hover {
-  transform: translateY(-5px);
-  border-color: rgba(124, 58, 237, 0.2);
-}
-
-.feature:hover::before {
-  transform: translateX(100%);
-}
-
-.featureIcon {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.feature h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-
-.feature p {
-  font-size: 0.875rem;
-  opacity: 0.8;
 }
 
 .latestPapers {
@@ -268,22 +274,16 @@
   }
 }
 
-@keyframes shine {
-  to {
-    background-position: 200% center;
-  }
-}
-
 @media (max-width: 768px) {
   .title {
     font-size: 2.5rem;
   }
   
-  .stats {
-    gap: 2rem;
+  .features {
+    grid-template-columns: 1fr;
   }
   
-  .features {
+  .stats {
     grid-template-columns: 1fr;
   }
 }

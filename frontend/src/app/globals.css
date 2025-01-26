@@ -3,15 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --background: #0f172a;
-  --foreground: #e2e8f0;
-  --primary: #00f6ff;
-  --secondary: #00dc82;
-  --accent: #7c3aed;
-  --surface: rgba(255, 255, 255, 0.03);
-  --border: rgba(255, 255, 255, 0.1);
-  --primary-rgb: 0, 246, 255;
-  --secondary-rgb: 0, 220, 130;
+  --background: #000000;
+  --foreground: #00ff00;
+  --primary: #ff00ff;
+  --secondary: #ffff00;
+  --accent: #00ffff;
+  --surface: #000080;
+  --border: #ff0000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,9 +22,15 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-geist-sans);
-  background-image: 
-    radial-gradient(circle at 50% 0%, rgba(var(--primary-rgb), 0.1), transparent 50%),
-    radial-gradient(circle at 0% 100%, rgba(var(--secondary-rgb), 0.1), transparent 50%);
-  background-attachment: fixed;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAIklEQVQoU2N89+7dfwYsQFFREStDsAJk+ViVEK0A2TZiFQAA7/gvYW+HfEQAAAAASUVORK5CYII=");
+}
+
+* {
+  cursor: url("data:image/cur;base64,..."), auto;
+}
+
+::selection {
+  background: #ff00ff;
+  color: #ffff00;
 }

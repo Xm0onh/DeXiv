@@ -40,74 +40,105 @@ export default function About() {
         <div className={styles.glowOrb}></div>
         <div className={styles.glowOrb2}></div>
 
-        <section className={styles.hero}>
-          <h1 className={styles.title}>
-            Revolutionizing Academic Publishing
-          </h1>
-          <p className={styles.subtitle}>
-            DexiV Research is building the future of academic publishing through blockchain technology,
-            making research more accessible, transparent, and verifiable than ever before.
-          </p>
-        </section>
+        <header className={styles.header}>
+          <h1 className={styles.title}>About DeXiv Papers</h1>
+          <p className={styles.subtitle}>Revolutionizing Academic Publishing</p>
+        </header>
 
-        <section className={styles.stats}>
-          {stats.map((stat, index) => (
-            <div key={index} className={styles.statItem}>
-              <div className={styles.statNumber}>{stat.number}</div>
-              <div className={styles.statLabel}>{stat.label}</div>
+        <div className={styles.content}>
+          <section className={styles.section}>
+            <div className={styles.sectionHeader}>
+              <div className={styles.pixelCorner}></div>
+              <div className={styles.pixelCorner}></div>
+              <div className={styles.pixelCorner}></div>
+              <div className={styles.pixelCorner}></div>
+              <h2 className={styles.sectionTitle}>Our Mission</h2>
             </div>
-          ))}
-        </section>
+            <p className={styles.text}>
+              DeSci Papers is pioneering the future of academic publishing through blockchain technology. 
+              We believe in making research accessible, transparent, and truly decentralized.
+            </p>
+          </section>
 
-        <section className={styles.features}>
-          <h2 className={styles.sectionTitle}>Why Choose DexiV Research?</h2>
-          <div className={styles.featureGrid}>
-            {features.map((feature, index) => (
-              <div key={index} className={styles.featureCard}>
-                <span className={styles.featureIcon}>{feature.icon}</span>
-                <h3 className={styles.featureTitle}>{feature.title}</h3>
-                <p className={styles.featureDescription}>{feature.description}</p>
+          <section className={styles.features}>
+            <div className={styles.feature}>
+              <div className={styles.featureIcon}>🔗</div>
+              <h3 className={styles.featureTitle}>Decentralized</h3>
+              <p className={styles.featureText}>
+                Powered by blockchain technology, ensuring permanent and immutable research records
+              </p>
+            </div>
+
+            <div className={styles.feature}>
+              <div className={styles.featureIcon}>🚀</div>
+              <h3 className={styles.featureTitle}>Fast Publishing</h3>
+              <p className={styles.featureText}>
+                Skip the traditional months-long publishing process
+              </p>
+            </div>
+
+            <div className={styles.feature}>
+              <div className={styles.featureIcon}>🌐</div>
+              <h3 className={styles.featureTitle}>Open Access</h3>
+              <p className={styles.featureText}>
+                Research should be accessible to everyone, everywhere
+              </p>
+            </div>
+          </section>
+
+          <section className={styles.section}>
+            <div className={styles.sectionHeader}>
+              <div className={styles.pixelCorner}></div>
+              <div className={styles.pixelCorner}></div>
+              <div className={styles.pixelCorner}></div>
+              <div className={styles.pixelCorner}></div>
+              <h2 className={styles.sectionTitle}>How It Works</h2>
+            </div>
+            <div className={styles.steps}>
+              <div className={styles.step}>
+                <div className={styles.stepNumber}>01</div>
+                <h3 className={styles.stepTitle}>Submit Research</h3>
+                <p className={styles.stepText}>
+                  Upload your paper and metadata to our platform
+                </p>
               </div>
-            ))}
-          </div>
-        </section>
 
-        <section className={styles.mission}>
-          <h2 className={styles.sectionTitle}>Our Mission</h2>
-          <div className={styles.missionContent}>
-            <p>
-              We believe that academic research should be freely accessible to everyone. 
-              Our platform leverages blockchain technology to create a transparent, 
-              decentralized ecosystem for academic publishing.
-            </p>
-            <p>
-              By removing traditional barriers and intermediaries, we empower researchers 
-              to share their work directly with the global academic community while 
-              maintaining verifiable records of authorship and citations.
-            </p>
-          </div>
-        </section>
+              <div className={styles.step}>
+                <div className={styles.stepNumber}>02</div>
+                <h3 className={styles.stepTitle}>Verification</h3>
+                <p className={styles.stepText}>
+                  Community review and automated checks
+                </p>
+              </div>
 
-        <section className={styles.team}>
-          <h2 className={styles.sectionTitle}>Built by Researchers, for Researchers</h2>
-          <p className={styles.teamDescription}>
-            Our team consists of academics, developers, and blockchain experts who understand 
-            the challenges of traditional academic publishing. We're committed to creating 
-            a better system that serves the global research community.
-          </p>
-        </section>
+              <div className={styles.step}>
+                <div className={styles.stepNumber}>03</div>
+                <h3 className={styles.stepTitle}>Publication</h3>
+                <p className={styles.stepText}>
+                  Paper is permanently stored on the blockchain
+                </p>
+              </div>
+            </div>
+          </section>
 
-        <section className={styles.cta}>
-          <h2 className={styles.ctaTitle}>Join the Future of Academic Publishing</h2>
-          <p className={styles.ctaDescription}>
-            Start publishing your research on the blockchain today and become part of 
-            the decentralized academic community.
-          </p>
-          <div className={styles.ctaButtons}>
-            <button className={styles.primaryButton}>Submit Paper</button>
-            <button className={styles.secondaryButton}>Learn More</button>
-          </div>
-        </section>
+          <section className={styles.section}>
+            <div className={styles.sectionHeader}>
+              <div className={styles.pixelCorner}></div>
+              <div className={styles.pixelCorner}></div>
+              <div className={styles.pixelCorner}></div>
+              <div className={styles.pixelCorner}></div>
+              <h2 className={styles.sectionTitle}>Join The Revolution</h2>
+            </div>
+            <div className={styles.cta}>
+              <p className={styles.ctaText}>
+                Ready to be part of the future of academic publishing?
+              </p>
+              <button className={styles.ctaButton}>
+                START PUBLISHING
+              </button>
+            </div>
+          </section>
+        </div>
       </main>
     </div>
   );

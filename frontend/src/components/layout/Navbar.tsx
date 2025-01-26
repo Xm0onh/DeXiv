@@ -6,7 +6,7 @@ export default function Navbar() {
     <nav className={styles.navbar}>
       <div className={styles.container}>
         <Link href="/" className={styles.logoContainer}>
-          <span className={styles.logo}>DexiV</span>
+          <span className={styles.logo}>DeXiv</span>
           <span className={styles.logoAccent}>Research</span>
         </Link>
         

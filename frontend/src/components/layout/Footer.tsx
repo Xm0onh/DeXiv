@@ -7,7 +7,7 @@ export default function Footer() {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.section}>
-            <h3 className={styles.sectionTitle}>DexiV Research</h3>
+            <h3 className={styles.sectionTitle}>DeXiv Research</h3>
             <p className={styles.description}>
               Revolutionizing academic publishing through blockchain technology.
               Making research more accessible, transparent, and verifiable.
@@ -52,7 +52,7 @@ export default function Footer() {
 
         <div className={styles.bottom}>
           <div className={styles.copyright}>
-            © {new Date().getFullYear()} DexiV Research. All rights reserved.
+            © {new Date().getFullYear()} DeXiv Research. All rights reserved.
           </div>
           <div className={styles.poweredBy}>
             Powered by <span className={styles.highlight}>Blockchain Technology</span>
